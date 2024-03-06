@@ -1,0 +1,43 @@
+/* HEADER CSS */  
+header{
+  background: rgba(0, 0, 0, 0.2);
+}
+#navbar{
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 40px;
+  align-items: center;
+}
+#logo{
+  height: 170px;
+  width: 233.12px;
+}
+#nav-menu{
+  display: flex;
+  gap: 65px;
+}
+#nav-menu>*{
+  border: 1px solid;
+  padding: 10px 30px;
+  border-radius: 20px;
+}
+
+
+
+
+
+
+
+
+
+/* LANDING PAGE CSS */
+/* .react-parallax{
+  position: absolute !important;
+  top: 0;
+  z-index: -1;
+  height: 100vh;
+  width: 100%;
+} */
+#parallax{
+  height: 100vh;
+}
