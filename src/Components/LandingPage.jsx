@@ -1,13 +1,29 @@
-import React from "react";
+import React,{useState,useEffect} from "react";
 import { Parallax } from "react-parallax";
-import Background from "../Assets/background.svg";
+import Background from "../Assets/7.jpg";
 import Header from "./Header";
-import AdPhoto from "../Assets/advertise_photo.png";
+import AdPhoto from "../Assets/10.jpg";
+import img1 from '../Assets/1.jpg'
+import img2 from '../Assets/13.jpg'
+import img3 from '../Assets/12.jpg'
+import img4 from '../Assets/10.jpg'
+import img5 from '../Assets/8.jpg'
+import img6 from '../Assets/7.jpg'
+import img7 from '../Assets/2.jpg'
 
 function LandingPage() {
+  const images=[img1,img2,img3,img4,img5,img6,img7]
+  const [currentImageIndex, setCurrentImageIndex] = useState(0)
+  useEffect(() => {
+    const intervalId = setInterval(() => {
+      setCurrentImageIndex((prevIndex) => (prevIndex + 1) % images.length);
+    }, 2000);
+
+    return () => clearInterval(intervalId);
+  }, [images]);
   return (
     <div id="landing-page">
-      <Parallax strength={450} bgImage={Background}>
+      <Parallax strength={450} bgImage={images[currentImageIndex]}>
         <div id="parallax">
           <Header></Header>
         </div>

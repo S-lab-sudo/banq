@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { Parallax } from "react-parallax";
-import Background from "../Assets/background.svg";
+import Background from "../Assets/7.jpg";
+import Background2 from "../Assets/1.jpg";
 import Header from "./Header";
 import Calender from "./Calender";
 
@@ -15,7 +16,7 @@ function Reservation() {
 
   return (
     <div>
-      <Parallax strength={450} bgImage={Background}>
+      <Parallax strength={450} bgImage={hallno===1?Background:Background2}>
         <div id="parallax">
           <Header></Header>
           <div id="hallSelect" className="centerIt">
@@ -73,6 +74,7 @@ function Reservation() {
             </div>
             <div id="reservationtime">
               <select value={timeofvisit} onChange={e=>setTimeofvisit(e.target.value)} >
+                <option value="">Please Select *</option>
                 {time.map((v)=>{
                   return <option value={v}>{v}</option>
                 })}

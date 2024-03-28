@@ -78,7 +78,7 @@ header{
   gap: 20px;
 }
 #hallSelect>*{
-  background-color: rgba(255,255,255,0.1);
+  background-color: rgba(0, 0, 0, 0.5);
   border-radius: 20px;
   color: #fff;
   font-size: 18px;
@@ -141,6 +141,15 @@ header{
   cursor: pointer;
 }
 
+
+
+
+
+
+
+
+
+/* Our Services */
 #services{
   display: flex;
   flex-direction: column;
@@ -155,7 +164,7 @@ header{
 #services>div{
   width: 100%;
   padding: 20px 20px;
-  background-color: #0EFD09;
+  background-color: #00b737;
   box-sizing: border-box;
   border-radius: 10px;
 }
@@ -169,7 +178,7 @@ header{
 
 
 
-/* Our Services */
+/* Contact Us */
 #contactemailaddress,#conactno>label{
   font-size: 20px;
   font-weight: bold;
@@ -177,4 +186,24 @@ header{
 #conactno{
   display: flex;
   flex-direction: column;
+}
+
+
+
+
+
+
+
+
+
+/* Gallery */
+#gallery{
+  margin-top: 20px;
+  -webkit-column-count: 3;
+  -moz-column-count: 3;
+  column-count: 3;
+  -webkit-column-width: 33%;
+  -moz-column-width: 33%;
+  column-width: 33%;
+  padding: 0 10px;
 }
