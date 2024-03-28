@@ -9,3 +9,14 @@ a{
   all: unset;
   cursor: pointer;
 }
+.text-align-center{
+  text-align: center;
+  font-size: 32px;
+  font-family: math;
+  color: #0d530c;
+}
+.centerIt{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
