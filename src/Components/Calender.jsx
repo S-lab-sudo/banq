@@ -1,97 +1,98 @@
-import React, { useState } from 'react';
+import dayjs from "dayjs";
+import React, { useState } from "react";
+import { generateDate, months } from "./util/calendar";
+import cn from "./util/cn";
+import { GrFormNext, GrFormPrevious } from "react-icons/gr";
 
-const dates = Array(7 * 6) // Calendar with 6 weeks
-  .fill(0)
-  .map((n, i) => i + 1);
+export default function Calendar() {
+	const days = ["S", "M", "T", "W", "T", "F", "S"];
+	const currentDate = dayjs();
+	const [today, setToday] = useState(currentDate);
+	const [selectDate, setSelectDate] = useState(currentDate);
+	return (
+		<div className="flex gap-10 sm:divide-x justify-center sm:w-1/2 mx-auto  h-screen items-center sm:flex-row flex-col">
+			<div className="w-96 h-96 ">
+				<div className="flex justify-between items-center">
+					<h1 className="select-none font-semibold">
+						{months[today.month()]}, {today.year()}
+					</h1>
+					<div className="flex gap-10 items-center ">
+						<GrFormPrevious
+							className="w-5 h-5 cursor-pointer hover:scale-105 transition-all"
+							onClick={() => {
+								setToday(today.month(today.month() - 1));
+							}}
+						/>
+						<h1
+							className=" cursor-pointer hover:scale-105 transition-all"
+							onClick={() => {
+								setToday(currentDate);
+							}}
+						>
+							Today
+						</h1>
+						<GrFormNext
+							className="w-5 h-5 cursor-pointer hover:scale-105 transition-all"
+							onClick={() => {
+								setToday(today.month(today.month() + 1));
+							}}
+						/>
+					</div>
+				</div>
+				<div className="grid grid-cols-7 ">
+					{days.map((day, index) => {
+						return (
+							<h1
+								key={index}
+								className="text-sm text-center h-14 w-14 grid place-content-center text-gray-500 select-none"
+							>
+								{day}
+							</h1>
+						);
+					})}
+				</div>
 
-const colors = {
-  available: 'white',
-  reserved: 'lightgray',
-  unavailable: 'lightblue',
-};
-
-function Calendar() {
-  const [year, setYear] = useState(2024);
-  const [month, setMonth] = useState(1); // February is 1
-  const [selectedDate, setSelectedDate] = useState(null); // State for selected date
-
-  const handlePrevMonth = () => {
-    setMonth(month === 0 ? 11 : month - 1);
-  };
-
-  const handleNextMonth = () => {
-    setMonth(month === 11 ? 0 : month + 1);
-  };
-
-  // Function to split array into chunks (handles missing chunk method)
-  const chunk = (arr, size = 7) => {
-    const chunks = [];
-    while (arr.length > 0) {
-      chunks.push(arr.slice(0, size));
-      arr = arr.slice(size);
-    }
-    return chunks;
-  };
-
-  const getDayClass = (date) => {
-    // Replace with your logic to check available, reserved, or unavailable
-    const isReserved = date % 3 === 0;
-    return selectedDate === date
-      ? 'lightgreen' // Highlight selected date
-      : isReserved
-      ? colors.reserved
-      : colors.available;
-  };
-
-  const handleDateClick = (date) => {
-    setSelectedDate(date);
-  };
-
-  const renderWeeks = (weeks) => {
-    return chunk(weeks).map((week, i) => (
-      <tr key={i}>
-        {week.map((day) => (
-          <td
-            key={day}
-            className={getDayClass(day)}
-            style={{ backgroundColor: getDayClass(day), width: '68px' }} // Adjust width
-            onClick={() => handleDateClick(day)}
-          >
-            {day}
-          </td>
-        ))}
-      </tr>
-    ));
-  };
-
-  const firstDay = new Date(year, month, 1).getDay();
-
-  return (
-    <div className="calendar"> {/* Set width and height */}
-      <div className="calendar-header">
-        <button onClick={handlePrevMonth}>Prev</button>
-        <div>{`${new Date(year, month, 1).toLocaleDateString('en-US', {
-          month: 'long', 
-          year: 'numeric',
-        })}`}</div>
-        <button onClick={handleNextMonth}>Next</button>
-      </div>
-      <table>
-        <thead>
-          <tr>
-            <th>S</th>
-            <th>M</th>
-            <th>T</th>
-            <th>W</th>
-            <th>T</th> 
-            <th>F</th>
-            <th>S</th>
-          </tr>
-        </thead>
-        <tbody>{renderWeeks(dates.slice(firstDay))}</tbody>
-      </table>
-    </div>
-  );
+				<div className=" grid grid-cols-7 ">
+					{generateDate(today.month(), today.year()).map(
+						({ date, currentMonth, today, disabled }, index) => {
+							return (
+								<div
+									key={index}
+									className="p-2 text-center h-14 grid place-content-center text-sm border-t"
+								>
+									<h1
+										className={cn(
+											currentMonth ? "" : "text-gray-400",
+											today
+												? "bg-red-600 text-white"
+												: "",
+											selectDate
+												.toDate()
+												.toDateString() ===
+												date.toDate().toDateString()
+												? "bg-black text-white"
+												: "",
+											"h-10 w-10 rounded-full grid place-content-center hover:bg-black hover:text-white transition-all cursor-pointer select-none"
+										)}
+										onClick={() => {
+											console.log(disabled)
+											setSelectDate(date);
+										}}
+									>
+										{date.date()}
+									</h1>
+								</div>
+							);
+						}
+					)}
+				</div>
+			</div>
+			<div className="h-96 w-96 sm:px-5">
+				<h1 className=" font-semibold">
+					Schedule for {selectDate.toDate().toDateString()}
+				</h1>
+				<p className="text-gray-400">No meetings for today.</p>
+			</div>
+		</div>
+	);
 }
-
-export default Calendar;

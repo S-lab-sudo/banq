@@ -12,15 +12,14 @@ import img10 from '../Assets/10.jpg'
 import img11 from '../Assets/11.jpg'
 import img12 from '../Assets/12.jpg'
 import img13 from '../Assets/13.jpg'
-import img14 from '../Assets/14.jpg'
 
 function Gallery() {
-  const images=[img1,img2,img3,img4,img5,img6,img7,img8,img9,img10,img11,img12,img13,img14]
+  const images=[img1,img2,img3,img4,img5,img6,img7,img8,img9,img10,img11,img12,img13]
   return (
     <div id='gallery' >
       {images.map((v,i)=>{
         return (
-          <div key={i} className='galleryPicture' > <img src={v} width={"100%"} /> </div>
+          <div key={i} className='galleryPicture' > <img alt={v} src={v} width={"100%"} /> </div>
         )
       })}
     </div>

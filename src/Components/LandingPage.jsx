@@ -1,6 +1,5 @@
 import React,{useState,useEffect} from "react";
 import { Parallax } from "react-parallax";
-import Background from "../Assets/7.jpg";
 import Header from "./Header";
 import AdPhoto from "../Assets/10.jpg";
 import img1 from '../Assets/1.jpg'

@@ -76,7 +76,7 @@ function Reservation() {
               <select value={timeofvisit} onChange={e=>setTimeofvisit(e.target.value)} >
                 <option value="">Please Select *</option>
                 {time.map((v)=>{
-                  return <option value={v}>{v}</option>
+                  return <option key={v} value={v}>{v}</option>
                 })}
               </select>
             </div>

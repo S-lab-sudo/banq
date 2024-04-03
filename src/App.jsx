@@ -17,7 +17,7 @@ function App() {
   },[location])
   return (
     <div className="App">
-      {url===''||url==='reservation'?'':<Header />}
+      {url===''||'reservation'||'ourservices'||'contactus'?'':<Header />}
       <Routes>
         <Route path="/" element={<LandingPage/>} ></Route>
         <Route path="/reservation" element={<Reservation/>} ></Route>

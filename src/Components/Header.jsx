@@ -7,7 +7,6 @@ function Header() {
   let location=useLocation();
   const [url, setUrl] = useState('')
   useEffect(()=>{
-    console.log(window.location.href.split('/').pop())
     setUrl(window.location.href.split('/').pop())
   },[location])
   return (

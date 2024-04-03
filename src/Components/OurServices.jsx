@@ -1,28 +1,48 @@
-import React from 'react'
-import Services from './Services'
+import React from "react";
+import diamond from "../Assets/diamond.jpg";
+import { Parallax } from "react-parallax";
+import Header from "./Header";
+import background from "../Assets/722.jpg";
 
 function OurServices() {
-  const ourService=[
-    {
-      serviceTitle:"I am Service 1",
-      serviceDescription:"Services Testing"
-    },
-    {
-      serviceTitle:"I am Service 2",
-      serviceDescription:"Service 2 Testing"
-    },
-    {
-      serviceTitle:"I am Service 1",
-      serviceDescription:"Service 3 Testing"
-    },
-  ]
   return (
-    <div id='services' >
-      {ourService.map((v,i)=>{
-        return <Services key={i} serviceTitle={v.serviceTitle} serviceDescription={v.serviceDescription} />
-      })}
-    </div>
-  )
+    <>
+      <Parallax strength={450} bgImage={background}>
+        <div id="parallax">
+          <Header></Header>
+          <div id="services">
+            <h1>Our Services</h1>
+            <div id="serviceDetails">
+              <div id="silverPackage" className="serviceCard">
+                <img src={diamond} alt="Service Package" />
+                <label className="servicename">Silver Package</label>
+              </div>
+              <div id="goldrPackage" className="serviceCard">
+                <img src={diamond} alt="Service Package" />
+                <label className="servicename">Gold Package</label>
+              </div>
+              <div id="diamondPackage" className="serviceCard">
+                <img src={diamond} alt="Service Package" />
+                <label className="servicename">Diamond Package</label>
+              </div>
+              <div id="dj" className="serviceCard">
+                <img src={diamond} alt="Service Package" />
+                <label className="servicename">DJ</label>
+              </div>
+              <div id="parking" className="serviceCard">
+                <img src={diamond} alt="Service Package" />
+                <label className="servicename">Open Parking</label>
+              </div>
+              <div id="spaciousHall" className="serviceCard">
+                <img src={diamond} alt="Service Package" />
+                <label className="servicename">Spacious Hall</label>
+              </div>
+            </div>
+          </div>
+        </div>
+      </Parallax>
+    </>
+  );
 }
 
-export default OurServices
+export default OurServices;
