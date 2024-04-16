@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import axios from 'axios'
 import { FaLocationDot } from "react-icons/fa6";
 import { IoIosCall } from "react-icons/io";
 import { IoMdMail } from "react-icons/io";
@@ -9,21 +10,33 @@ import { CiMail } from "react-icons/ci";
 import { FaFacebook } from "react-icons/fa";
 import { FaInstagram } from "react-icons/fa";
 import { FaTwitter } from "react-icons/fa";
-import { Parallax } from "react-parallax";
 import Header from "./Header";
-import background from "../Assets/722.jpg";
 
 function ContactUs() {
   const [name, setName] = useState("");
   const [emailAddress, setEmailAddress] = useState("");
   const [rating, setRating] = useState(0);
   const [message, setMessage] = useState("");
-  return (
-    <>
-      <Parallax strength={450} bgImage={background}>
-        <div id="parallax">
-          <Header></Header>
 
+  const sendReviews=()=>{
+    if(!name||!emailAddress||rating===0||!message){
+      return alert("Please Fill all the details");
+    }
+    let dataToSend={name,emailAddress,rating,message}
+    axios.post("http://localhost:8000/api/addreviews",dataToSend).then(response=>{
+      alert(response.data.message)
+      if(response.data.success){
+        setName("")
+        setEmailAddress("")
+        setRating(0)
+        setMessage("")
+      }
+    })
+  }
+
+  return (
+        <div id="contactUsWrapper">
+          <Header></Header>
           <div id="contactUs" className="centerIt">
             <div id="contactDetailsHolder">
               <div id="contactUsDetails">
@@ -70,7 +83,7 @@ function ContactUs() {
                   <CiUser size={25} />{" "}
                   <input
                     type="text"
-                    placeholder={<>Name <span style={{ color: "red" }}>*</span></>}
+                    placeholder='Name *'
                     value={name}
                     onChange={(e) => setName(e.target.value)}
                   />
@@ -105,9 +118,7 @@ function ContactUs() {
                 </div>
                 <div className="flex flex-col gap-2">
                   <div id="sendReviews" className="centerIt">
-                    <button>
-                      <button>Send Message</button>
-                    </button>
+                      <button id="sendButton" onClick={()=>sendReviews()} >Send Message</button>
                   </div>
                   <div id="otherOptionsTitle" className="centerIt">
                     <h1>Or</h1>
@@ -123,8 +134,6 @@ function ContactUs() {
             </div>
           </div>
         </div>
-      </Parallax>
-    </>
   );
 }
 

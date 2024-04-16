@@ -1,4 +1,4 @@
-import React,{useState,useEffect} from "react";
+import React,{useState,useEffect,useMemo} from "react";
 import { Parallax } from "react-parallax";
 import Header from "./Header";
 import AdPhoto from "../Assets/10.jpg";
@@ -11,7 +11,7 @@ import img6 from '../Assets/7.jpg'
 import img7 from '../Assets/2.jpg'
 
 function LandingPage() {
-  const images=[img1,img2,img3,img4,img5,img6,img7]
+  const images= useMemo(()=>[img1,img2,img3,img4,img5,img6,img7],[])
   const [currentImageIndex, setCurrentImageIndex] = useState(0)
   useEffect(() => {
     const intervalId = setInterval(() => {
@@ -27,7 +27,7 @@ function LandingPage() {
           <Header></Header>
         </div>
       </Parallax>
-      <p>
+      <>
         <h3 className="text-align-center">EXPRIENCE LUXURY EXPRIENCE</h3>
         <h3 className="text-align-center">
           <strong>GREENLAND BANQUET</strong>
@@ -45,7 +45,7 @@ function LandingPage() {
           for weddings, meetings, conferences, product launches, concerts, and
           celebratory functions.
         </p>
-      </p>
+      </>
       <div className="gallaryPhotos">
         <div className="gallaryHolder">
           <div className="card">

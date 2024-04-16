@@ -95,6 +95,12 @@ header{
 
 #reservationForm{
   padding: 0px 60px;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+#reservationForm>h1{
+  font-size: 30px;
 }
 #userguide{
   display: flex;
@@ -105,6 +111,7 @@ header{
   display: inline-flex;
   align-items: center;
   margin-right: 40px;
+  font-size: 20px;
 }
 #userguide>#resguide>label>label{
   margin-left: 10px;
@@ -126,7 +133,7 @@ header{
   flex-direction: column;
   gap: 20px;
 }
-#name>input,#phonenumber>input,#reservationtime>select,#purposeofvisit>input,#description>textarea{
+#name>input,#phonenumber>input,#reservationtime>select,#purposeofvisit>input,#description>textarea,#noOfGuests>input{
   width: 100%;
   font-size: 20px;
   padding: 10px;
@@ -146,9 +153,18 @@ header{
   color: #fff;
   cursor: pointer;
 }
-
-
-
+.dateNotAvailable{
+  background-color: rgb(26, 41, 107);
+  color: #fff;
+}
+.calenderWrapper{
+  height: 80%;
+  width: 80%;
+}
+.reserved{
+  background-color: rgb(217, 217, 217);
+  cursor:auto;
+}
 
 
 
@@ -156,6 +172,9 @@ header{
 
 
 /* Our Services */
+#ourServicesWrapper{
+  background-image: url("./Assets/722.jpg");
+}
 #services>h1{
   font-size: 50px;
   text-align: center;
@@ -198,6 +217,9 @@ header{
 
 
 /* Contact Us */
+#contactUsWrapper{
+  background-image: url("./Assets/722.jpg");
+}
 #contactUs{
   display: flex;
   align-items: center;
@@ -319,4 +341,11 @@ header{
   -moz-column-width: 33%;
   column-width: 33%;
   padding: 0 10px;
+  padding-bottom: 20px;
+}
+#galerryWrapper{
+  background-image: url("./Assets/722.jpg");
+}
+.galleryPicture{
+  margin-bottom: 20px;
 }

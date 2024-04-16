@@ -1,23 +1,15 @@
 import "./App.css";
-import { Routes, Route, useLocation } from "react-router-dom";
-import Header from "./Components/Header";
+import { Routes, Route } from "react-router-dom";
 import LandingPage from "./Components/LandingPage";
 import Reservation from "./Components/Reservation";
 import OurServices from "./Components/OurServices";
 import ContactUs from "./Components/ContactUs";
 import Gallery from "./Components/Gallery";
 import Footer from "./Components/Footer";
-import { useEffect, useState } from "react";
 
 function App() {
-  let location=useLocation();
-  const [url, setUrl] = useState('')
-  useEffect(()=>{
-    setUrl(window.location.href.split('/').pop())
-  },[location])
   return (
     <div className="App">
-      {url===''||'reservation'||'ourservices'||'contactus'?'':<Header />}
       <Routes>
         <Route path="/" element={<LandingPage/>} ></Route>
         <Route path="/reservation" element={<Reservation/>} ></Route>
