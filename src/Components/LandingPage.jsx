@@ -27,7 +27,7 @@ function LandingPage() {
           <Header></Header>
         </div>
       </Parallax>
-      <>
+      <div id="about-banquet">
         <h3 className="text-align-center">EXPRIENCE LUXURY EXPRIENCE</h3>
         <h3 className="text-align-center">
           <strong>GREENLAND BANQUET</strong>
@@ -45,7 +45,7 @@ function LandingPage() {
           for weddings, meetings, conferences, product launches, concerts, and
           celebratory functions.
         </p>
-      </>
+      </div>
       <div className="gallaryPhotos">
         <div className="gallaryHolder">
           <div className="card">

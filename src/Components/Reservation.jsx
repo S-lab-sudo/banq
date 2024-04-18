@@ -39,15 +39,34 @@ function Reservation() {
     setNoOfGuests("")
     setPurposeOfVisit("")
     setDescription("")
+    setHallno("")
   }
 
   const handleBook=()=>{
+    if(!hallno){
+      return alert("Please select a hall")
+    }
     if(!name||!phonenumber||!noOfGuests||!reservationDate){
       return alert("Please Fill details with * mark")
     }
     const dataToSend={name:name,phonenumber:phonenumber,dateofvisit:dayjs(reservationDate).format("YYYY-MM-DD"),purposeofvisit:purposeOfVisit, description:description,hallno:hallno}
     axios.post("http://localhost:8000/api/makereservation",dataToSend).then(response=>{
       alert(response.data.message)
+      if(response.data.success){
+        let reservationsString=localStorage.getItem('myreservation')
+        
+        if(reservationsString){
+          console.log("first")
+          let reservationArray=reservationsString.split('&&')
+          reservationArray.push( JSON.stringify(dataToSend))
+          console.log(reservationArray.join("&&"))
+          localStorage.setItem("myreservation",reservationArray.join("&&"))
+        }else{
+          localStorage.setItem("myreservation",[JSON.stringify(dataToSend)].join(','))
+        }
+
+        handleReset()
+      }
     })
   }
 
@@ -77,28 +96,28 @@ function Reservation() {
         <div id="userguide">
           <div id="resguide">
             <label>
-              Available :
+              Available
               <label
                 style={{ backgroundColor: "#fff" }}
                 className="dateAvailableGuide"
               ></label>
             </label>
             <label>
-              Reserved :{" "}
+              Reserved
               <label
                 style={{ backgroundColor: "#D9D9D9" }}
                 className="dateAvailableGuide"
               ></label>
             </label>
             <label>
-              Not Possible :{" "}
+              Unavailable
               <label
                 style={{ backgroundColor: "#1A296B" }}
                 className="dateAvailableGuide"
               ></label>
             </label>
             <label>
-              Today :{" "}
+              Today
               <label
                 style={{ backgroundColor: "rgb(220 38 38" }}
                 className="dateAvailableGuide"
@@ -131,6 +150,9 @@ function Reservation() {
             </div>
           </div>
         </div>
+      </div>
+      <div id="myReservations">
+        {(localStorage.getItem('myreservation')&&((localStorage.getItem('myreservation').split('&&').map(v=>console.log(JSON.parse(v))))))}
       </div>
     </div>
   );

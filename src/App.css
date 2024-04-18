@@ -1,89 +1,81 @@
-/* HEADER CSS */  
-header{
-  background: rgba(0, 0, 0, 0.2);
+/* HEADER CSS */
+header {
+  background: rgba(0, 0, 0, 0.40);
 }
-#navbar{
+#navbar {
   display: flex;
   justify-content: space-between;
   padding: 10px 40px;
   align-items: center;
 }
-#logo{
+#logo {
   height: 170px;
   width: 233.12px;
 }
-#logo>img{
+#logo > img {
   height: 100%;
   width: 100%;
 }
-#nav-menu{
+#nav-menu {
   display: flex;
   gap: 65px;
 }
-#nav-menu>*{
+#nav-menu > * {
   font-size: 20px;
   font-weight: bold;
   padding: 10px 30px;
   border-radius: 20px;
   color: #fff;
-  border:2px solid #fff;
+  border: 2px solid #fff;
   background-color: rgba(0, 0, 0, 0.25);
 }
-.current-url{
-  border-color: #0EFD09 !important;
+.current-url {
+  border-color: #0efd09 !important;
 }
 
-
-
-
-
-
+.react-parallax-bgimage{
+  object-fit: cover;
+}
 
 
 /* LANDING PAGE CSS */
-#parallax{
-  height: 100vh; 
+#parallax {
+  height: 100vh;
 }
 
-.gallaryPhotos{
+.gallaryPhotos {
   display: flex;
   flex-direction: column;
   gap: 10px;
 }
-.gallaryHolder{
+.gallaryHolder {
   display: flex;
   flex-direction: row;
   padding: 0px 110px;
   justify-content: space-between;
 }
-.card{
+.card {
   font-size: 22px;
   display: flex;
   flex-direction: column;
   width: 30%;
 }
-.card>img{
+.card > img {
   width: 100%;
 }
 
-
-#googleMaps{
+#googleMaps {
   margin: 80px 0px;
 }
 
-
-
-
-
-
 /* RESERVATION */
-#hallSelect{
+#hallSelect {
   display: flex;
   flex-direction: column;
   margin-top: 20px;
   gap: 20px;
 }
-#hallSelect>*{
+#hallSelect > * {
   background-color: rgba(0, 0, 0, 0.5);
   border-radius: 20px;
   color: #fff;
@@ -93,47 +85,52 @@ header{
   border: 2px solod rgba(0, 0, 0, 0);
 }
 
-#reservationForm{
+#reservationForm {
   padding: 0px 60px;
   display: flex;
   flex-direction: column;
   gap: 30px;
 }
-#reservationForm>h1{
+#reservationForm > h1 {
   font-size: 30px;
 }
-#userguide{
+#userguide {
   display: flex;
   justify-content: space-between;
   left: 0;
 }
-#userguide>#resguide>label{
+#userguide > #resguide > label {
   display: inline-flex;
   align-items: center;
   margin-right: 40px;
   font-size: 20px;
 }
-#userguide>#resguide>label>label{
+#userguide > #resguide > label > label {
   margin-left: 10px;
   width: 50px;
   display: inline-block;
   height: 20px;
   border: 1px solid black;
 }
-#reservationform{
+#reservationform {
   display: flex;
   gap: 40px;
 }
-#reservationform>div{
+#reservationform > div {
   width: 50%;
 }
-#reservationformdetails{
+#reservationformdetails {
   width: 100%;
   display: flex;
   flex-direction: column;
   gap: 20px;
 }
-#name>input,#phonenumber>input,#reservationtime>select,#purposeofvisit>input,#description>textarea,#noOfGuests>input{
+#name > input,
+#phonenumber > input,
+#reservationtime > select,
+#purposeofvisit > input,
+#description > textarea,
+#noOfGuests > input {
   width: 100%;
   font-size: 20px;
   padding: 10px;
@@ -142,10 +139,11 @@ header{
   box-shadow: 1px 1px 5px #00000040;
   box-sizing: border-box;
 }
-#bookreset{
+#bookreset {
   gap: 20px;
 }
-#bookButton,#resertForm{
+#bookButton,
+#resertForm {
   font-size: 20px;
   padding: 10px 50px;
   border-radius: 10px;
@@ -153,112 +151,103 @@ header{
   color: #fff;
   cursor: pointer;
 }
-.dateNotAvailable{
+.dateNotAvailable {
   background-color: rgb(26, 41, 107);
   color: #fff;
 }
-.calenderWrapper{
+.calenderWrapper {
   height: 80%;
   width: 80%;
 }
-.reserved{
+.reserved {
   background-color: rgb(217, 217, 217);
-  cursor:auto;
+  cursor: auto;
 }
-
-
-
-
-
 
 /* Our Services */
-#ourServicesWrapper{
+#ourServicesWrapper {
   background-image: url("./Assets/722.jpg");
 }
-#services>h1{
+#services > h1 {
   font-size: 50px;
   text-align: center;
   color: #fff;
 }
-#serviceDetails{
+#serviceDetails {
   display: grid;
   grid-template-columns: auto auto auto;
   padding: 0px 20px 6px 20px;
 }
-#serviceDetails>div{
+#serviceDetails > div {
   padding: 20px;
   position: relative;
   display: flex;
   justify-content: center;
-
 }
-#serviceDetails>div>img{
+#serviceDetails > div > img {
   border-radius: 5px;
   cursor: pointer;
   height: 300px;
   width: auto;
 }
-.servicename{
+.servicename {
   position: absolute;
   text-align: center;
   width: 100%;
   bottom: 40px;
   font-size: 25px;
   font-weight: 500;
-  color:#fff;
+  color: #fff;
   cursor: pointer;
 }
 
-
-
-
-
-
-
-
 /* Contact Us */
-#contactUsWrapper{
+#contactUsWrapper {
   background-image: url("./Assets/722.jpg");
 }
-#contactUs{
+#contactUs {
   display: flex;
   align-items: center;
   justify-content: center;
   padding: 10px 130px 50px 130px;
 }
-#contactUs>div{
+#contactUs > div {
   width: 50%;
 }
-#contactDetailsHolder{
+#contactDetailsHolder {
   display: flex;
   align-items: center;
   position: relative;
   justify-content: flex-end;
 }
-#contactUsDetails{
+#contactUsDetails {
   display: inline-block;
   position: absolute;
   right: -80px;
   flex-direction: column;
   padding: 30px;
-  background-color:#00B737;
+  background-color: #00b737;
   border-radius: 5px;
   width: 45%;
 }
-#contactusTitle{
+#contactusTitle {
   padding: 0 !important;
 }
-#contactUsDetails>div{
+#contactUsDetails > div {
   padding: 30px 0px 0px 0px;
 }
-#address,#phone,#mail{
+#address,
+#phone,
+#mail {
   display: flex;
 }
-#address>#icon,#phone>#icon,#mail>#icon{
+#address > #icon,
+#phone > #icon,
+#mail > #icon {
   margin-top: 3px;
 }
 
-#addReviews{
+#addReviews {
   display: flex;
   flex-direction: column;
   gap: 20px;
@@ -267,16 +256,19 @@ header{
   background-color: #fff;
   border-radius: 5px;
 }
-#reviewTitle>h1{
+#reviewTitle > h1 {
   font-size: 50px;
 }
-#nameInput,#emailInput,#ratings{
+#nameInput,
+#emailInput,
+#ratings {
   display: flex;
 }
-#ratings>*{
+#ratings > * {
   cursor: pointer;
 }
-#nameInput,#emailInput{
+#nameInput,
+#emailInput {
   width: 100%;
   border: 1px solid #000;
   font-size: 20px;
@@ -286,17 +278,19 @@ header{
   padding: 10px;
   box-sizing: border-box;
 }
-#nameInput>input,#emailInput>input{
+#nameInput > input,
+#emailInput > input {
   width: 100%;
 }
-#nameInput>input:focus,#emailInput>input:focus{
+#nameInput > input:focus,
+#emailInput > input:focus {
   outline: none;
 }
-#nameInput>input::placeholder::after{
-  content:"*";
-  color:red;
+#nameInput > input::placeholder::after {
+  content: "*";
+  color: red;
 }
-#messageInput>textarea{
+#messageInput > textarea {
   width: 100%;
   height: 15vh;
   padding: 10px;
@@ -305,34 +299,31 @@ header{
   font-size: 20px;
   resize: none;
 }
-#messageInput>textarea:focus{
+#messageInput > textarea:focus {
   outline: none;
 }
-#sendReviews>button{
-  background-color: #00B737;
+#sendReviews > button {
+  background-color: #00b737;
   padding: 10px 30px;
   color: #fff;
   border-radius: 20px;
 }
-#otherOptionsTitle{
+#otherOptionsTitle {
   flex-direction: column;
 }
-#otherOptionsTitle>h1{
+#otherOptionsTitle > h1 {
   font-size: 30px;
 }
-#otherOptionsTitle>p{
+#otherOptionsTitle > p {
   text-decoration: underline;
 }
-#otherConactOption{
+#otherConactOption {
   display: flex;
   gap: 20px;
 }
 
-
-
-
 /* Gallery */
-#gallery{
+#gallery {
   margin-top: 20px;
   -webkit-column-count: 3;
   -moz-column-count: 3;
@@ -343,9 +334,197 @@ header{
   padding: 0 10px;
   padding-bottom: 20px;
 }
-#galerryWrapper{
+#galerryWrapper {
   background-image: url("./Assets/722.jpg");
 }
-.galleryPicture{
+.galleryPicture {
   margin-bottom: 20px;
+}
+
+#toggleMenu{
+  display: none;
+}
+
+/* MOBILE RESPONSIVE */
+
+@media (max-width: 768px) {
+  /* HEADER */
+  #navbar{
+    padding: 5px 8px;
+    background-color: #00000040;
+  }
+  #nav-menu>*{
+    font-size: 14px;
+  }
+  #toggleMenu{
+    display: block;
+  }
+  #logo{
+    width: 70px;
+    height: 70px;
+  }
+  #nav-menu{
+    position: relative;
+    flex-direction: column;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+    background-color: #0f0f0f;
+    gap: 10px;
+    padding: 10px 0;
+    transition: all 0.5s;
+    animation: slideIn 0.3s ease-in-out;
+  }
+  @keyframes slideIn {
+    0% {
+      transform: translateX(100%);
+    }
+    100% {
+      transform: translateX(0);
+    }
+  }
+  #nav-menu>*{
+    font-size: 12px;
+    width: 100%;
+    background-color: #ffffff05;
+    text-align: center;
+    border: none;
+    /* border-top: 1px !important; */
+  }
+  .greenFont{
+    color: #00b737 !important;
+  }
+  /* LANDING PAGE */
+  #about-banquet>*{
+    font-size: 16px;
+    padding: 0 10px;
+  }
+  .gallaryHolder{
+    padding: 0px 10px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+  }
+  .gallaryHolder>.card{
+    width: 100%;
+  }
+  .gallaryHolder>.card>img{
+    width: 100%;
+    border-radius: 10px;
+  }
+
+  /* OUR SERVICES */
+  #services{
+    padding-bottom: 15px;
+  }
+  #services>h1{
+    font-size: 22px;
+    padding: 10px 0px;
+  }
+  #serviceDetails{
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+  }
+  .serviceCard{
+    width: 100%;
+    padding: 0px !important;
+  }
+  .serviceCard>img{
+    height: auto !important ;
+    width: 100% !important;
+  }
+  .serviceCard>label{
+    font-size: 14px;
+  }
+
+
+
+  /* CONTACT US */
+  #contactUs{
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+    gap: 20px;
+  }
+  #contactDetailsHolder{
+    position: unset;
+    width: 100% !important;
+  }
+  #contactUsDetails{
+    position: unset;
+    width: 100%;
+  }
+  #addServiceHolder{
+    width: 100% !important;
+  }
+  #addReviews{
+    padding: 15px;
+    width: 100%;
+  }
+  #reviewTitle>h1{
+    font-size: 22px;
+  }
+  #addReviews>div>input,#addReviews>div>textarea{
+    font-size: 14px;
+  }
+  #messageInput>textarea{
+    height: 25vh; 
+  }
+
+
+  /* Gallery */
+  #gallery{
+  -webkit-column-count: 1;
+  -moz-column-count: 1;
+  column-count: 1;
+  }
+
+
+
+  /* RESERVATION */
+  #reservationForm{
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+  }
+  #userguide{
+    display: flex;
+    flex-direction: column;
+  }
+  #resguide{
+    display: flex;
+    width: 100%;
+    padding: 0;
+    justify-content: space-between;
+  }
+  #resguide>label{
+    font-size: 14px !important;
+    font-weight: bold;
+  }
+  #userguide > #resguide > label {
+    display: inline-flex;
+    flex-direction: row;
+    margin: 0;
+  }
+  #userguide > #resguide > label > label {
+    height: 14px;
+    width: 24px;
+    margin-left: 2px;
+  }
+  #reservationform{
+    display: flex;
+    flex-direction: column;
+  }
+  #dateSelector{
+    width: 100% !important;
+  }
+  .calenderWrapper{
+    width: 100%;
+    padding: 10px;
+  }
+  #reservationformdetails{
+    width: 100% !important;
+    
+  }
 }

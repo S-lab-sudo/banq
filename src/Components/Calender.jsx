@@ -24,7 +24,7 @@ export default function Calendar({ reservedDates, setReservationDate }) {
   //   TESTS
   const letReserved = reservedDates.map(v=>dayjs(v).format("DD-MM-YYYY"))
   return (
-    <div className="flex gap-10 sm:divide-x justify-center sm:w-1/2 mx-auto items-center sm:flex-row flex-col border border-black rounded">
+    <div id="dateSelector" className="flex gap-10 sm:divide-x justify-center sm:w-1/2 mx-auto items-center sm:flex-row flex-col border border-black rounded">
       <div className="calenderWrapper">
         <div className="flex items-center justify-between">
           <GrFormPrevious
